@@ -72,13 +72,32 @@ int stack_top(Stack st){
 
 void display(Stack st){
     Node* t = st.top;
+    
+    printf("Stack:\n");
     while(t != NULL){
-        printf("\n%d", t->data); 
-        t = t.next;   
+        printf("%d\n", t->data);
+        t = t->next;   
     }
 }
 
 int main(void){
+    
+    Stack st;
+    create(&st);
+    
+    push(&st, 10);
+    push(&st, 20);
+    push(&st, 30);
+    push(&st, 40);
+    
+    display(st);
+    
+    printf("Top: %d\n", stack_top(st));
+    pop(&st);
+    
+    display(st);
+    
+    printf("Peek 2: %d\n", peek(st, 2));
     
     return 0;
 }
