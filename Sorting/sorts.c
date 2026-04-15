@@ -23,12 +23,31 @@ void bubbleSort(int arr[], int n){
     
 }
 
+void insertionSort(int arr[], int n){
+   for(int i = 1; i < n; i++){
+       int j= i - 1;
+       int x = arr[i];
+       while(j > -1 && arr[j] > x){
+           arr[j+1] = arr[j];
+           j--;
+       }
+       arr[j+1] = x;
+   } 
+}
+
 int main(void){
     int arr[] = {3, 7, 9, 10, 6, 5, 12, 4, 11, 2};
     int sizeArr = (int) sizeof(arr) / sizeof(int);
     
-    bubbleSort(arr, sizeArr);
+    // bubbleSort(arr, sizeArr);
     
+    // printf("arr sorted: ");
+    // for(int i = 0; i < sizeArr; i++){
+    //     printf("%d ", arr[i]);
+    // }
+    // printf("\n");
+    
+    insertionSort(arr, sizeArr);
     printf("arr sorted: ");
     for(int i = 0; i < sizeArr; i++){
         printf("%d ", arr[i]);
